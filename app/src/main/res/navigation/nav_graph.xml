@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/loginFragment">
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.example.github_assignment.views.LoginFragment"
+        android:label="fragment_login"
+        tools:layout="@layout/fragment_login" >
+        <action
+            android:id="@+id/action_loginFragment_to_profileFragment"
+            app:destination="@id/profileFragment" />
+        <action
+            android:id="@+id/action_loginFragment_to_blankFragment"
+            app:destination="@id/blankFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.example.github_assignment.views.ProfileFragment"
+        android:label="fragment_profile"
+        tools:layout="@layout/fragment_profile" >
+        <argument
+            android:name="userName"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_profileFragment_to_contributorFragment"
+            app:destination="@id/contributorFragment" />
+        <action
+            android:id="@+id/action_profileFragment_to_userNotFoundFragment"
+            app:destination="@id/userNotFoundFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/repoDisplayFragment"
+        android:name="com.example.github_assignment.views.RepoDisplayFragment"
+        android:label="fragment_repo_display"
+        tools:layout="@layout/fragment_repo_display" />
+    <fragment
+        android:id="@+id/contributorFragment"
+        android:name="com.example.github_assignment.views.ContributorFragment"
+        android:label="fragment_contributor"
+        tools:layout="@layout/fragment_contributor" >
+        <argument
+            android:name="repoName"
+            app:argType="string" />
+        <argument
+            android:name="userName"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_contributorFragment_to_profileFragment"
+            app:destination="@id/profileFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/userNotFoundFragment"
+        android:name="com.example.github_assignment.views.UserNotFoundFragment"
+        android:label="fragment_user_not_found"
+        tools:layout="@layout/fragment_user_not_found" />
+    <fragment
+        android:id="@+id/blankFragment"
+        android:name="com.example.github_assignment.views.BlankFragment"
+        android:label="fragment_blank"
+        tools:layout="@layout/fragment_blank" />
+</navigation>
