@@ -11,14 +11,12 @@ import io.mockk.MockKStubScope
 import io.mockk.coEvery
 import io.mockk.mockk
 import kotlinx.coroutines.*
-import org.junit.After
 import org.junit.Assert.*
 import org.junit.Before
 import org.junit.Rule
 import org.junit.Test
 import org.junit.runner.RunWith
 import org.junit.runners.JUnit4
-import org.mockito.Mockito
 import retrofit2.Response
 
 
